@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+  <br>
+  <h1 align="center">Welcome to Pension Management Portal</h1>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <img src="../../../assets/pic4.jpg" class="img-fluid" alt="Responsive image" height="70%" width="70%">
+      </div>
+      <div class="col-sm">
+        <div style="width: 80vh;"><br>
+          <h2 align="center">Login Here</h2><br>
+          <form #f="ngForm" (ngSubmit)="submit(f)">
+            <div class="form-group">
+                <label for="userName"><strong>Username <span class="text-danger">*</span></strong></label>
+                <input required ngModel name="userName" #userName="ngModel" type="text" class="form-control"
+        placeholder="User Name" aria-label="User Name" id="userName" minlength="4" maxlength="25">
+        <div *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="text-error">
+          <div *ngIf="userName.errors?.['required']">
+              * Username is required
+          </div>
+          <div *ngIf="userName.errors?.['minlength']">
+              * Username must be at least 4 characters long
+          </div>
+          <div *ngIf="userName.errors?.['maxlength']">
+              * Username must be at most 25 characters long
+          </div>
+      </div></div>
+            <div class="form-group mt-2">
+                <label for="password"><strong>Password <span class="text-danger">*</span></strong></label>
+                <input required ngModel name="password" #password="ngModel" type="password" class="form-control"
+        placeholder="Password" aria-label="Password" id="password">
+         <!-- Validaitons -->
+         <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-error">
+          <div *ngIf="password.errors?.['required']">
+              * Password is required
+          </div>
+      </div>
+            </div>
+            <button [disabled]="!f.valid || clicked" class="btn btn-primary col-12 mt-4 border-100">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                {{loginButtonText}}
+            </button>
+            <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+        </form>
+            </div>
+      </div>
+    </div>
+  </div>
+  
+  
+    </div>

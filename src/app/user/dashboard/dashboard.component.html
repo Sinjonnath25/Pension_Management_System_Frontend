@@ -1,0 +1,31 @@
+<h1 class=" text-center main-head">Welcome to the Pension Management System Portal</h1>
+<div class="row mt-3">
+
+    <!-- Pension Amount Details -->
+    <div class="col-lg-6 mb-5">
+	 
+        <div class="card outer-card-div curved-div">
+            <div class="card-body  inner-card-div">
+                <h1 class="card-title text-center">Process Pension</h1>
+                <a href="#" routerLink="../aadhar" (onClick)="processPension()" class="col-6 offset-3 btn bg-dark-blue">Enter Aadhar No to process pension
+				<i class="fas fa-angle-double-right"></i></a>
+            </div>
+            <div id="pension-amount" class="card-body">
+            </div>
+        </div>
+    </div> <!-- Pension Amount Details ends -->
+
+    <!-- Process Pension Serivce -->
+    <div class="col-lg-6">
+        <div class="card outer-card-div curved-div">
+            <div class="card-body inner-card-div">
+                <h1 class="card-title text-center">Get Pension Details</h1>
+                <a href="#" routerLink="../pension-details" (onClick)="getPensionDetails()" class="col-6 offset-3 btn bg-dark-blue">Enter Aadhar No to see pension details
+				<i class="fas fa-angle-double-right"></i></a>
+            </div>
+          <div id="process-pension" class="card-body">
+            </div>
+        </div>
+    </div> <!-- Process pension ends -->
+
+</div>

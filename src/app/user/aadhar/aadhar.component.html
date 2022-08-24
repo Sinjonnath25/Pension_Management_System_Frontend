@@ -1,0 +1,41 @@
+<div class="container-fluid">
+<router-outlet></router-outlet>
+<h2 align="center">Process Pension</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm  d-flex justify-content-center">
+      <br>
+      <img src="../../../assets/aadharpic.jpg" height="250" alt="Responsive image">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <div style="width: 80%;">
+        <form #f="ngForm" (ngSubmit)="submit(f)">
+             <div class="form-group">
+              <br>
+              <label for="exampleInputPassword1"><strong>Enter Aadhar Number to Process Pension</strong></label>
+              <input required ngModel name="aadharNo" #aadharNo="ngModel" type="text" class="form-control"
+              placeholder="User Name" aria-label="Aadhar No" id="aadharNo" minlength="12" maxlength="12" required="true">
+              <div *ngIf="aadharNo.invalid && (aadharNo.dirty || aadharNo.touched)" class="text-error">
+                <div *ngIf="aadharNo.errors?.['required']">
+                    * aadharNo is required
+                </div>
+                <div *ngIf="aadharNo.errors?.['minlength']">
+                    * AadharNo should be 12 Digits
+                </div>
+            </div>
+             </div>
+            <br>
+            <button type="submit" [disabled]="!f.valid || clicked" class="btn btn-primary">{{submitButtonText}}</button>&nbsp;
+            <button type="button" (click)="goBack()" class="btn btn-secondary">Back</button>
+          </form>
+          </div>
+    </div>
+  </div>
+
+  <div class="col d-flex justify-content-center text-primary" >{{load}}</div>
+
+</div>
+
+</div>
